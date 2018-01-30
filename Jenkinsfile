@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('package') {
       steps {
-        echo 'hello'
+        echo 'start'
+        sh 'gradle build'
       }
     }
   }

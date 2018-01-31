@@ -38,7 +38,7 @@ pipeline {
     }
     stage('upload') {
       steps {
-        bat(script: 'curl -F \'file=@./app/build/outputs/apk/app-debug.apk\' -F \'_api_key=44a037ad8e58e90ea0ee5285babb845b\' https://www.pgyer.com/apiv2/app/upload', returnStatus: true, returnStdout: true)
+        bat(script: 'curl -F \'file=@D:/Soft/Jenkins/workspace/CITest_master-RA4ZWC3S7NSBNS27QRXHH5X7J5MXVIBXN3WHYE66QY3XIJT3QB2A/app/build/outputs/apk/app-debug.apk\' -F \'_api_key=44a037ad8e58e90ea0ee5285babb845b\' https://www.pgyer.com/apiv2/app/upload', returnStatus: true, returnStdout: true)
       }
     }
     stage('staging') {

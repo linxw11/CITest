@@ -9,7 +9,7 @@ pipeline {
     }
     stage('ut') {
       steps {
-        echo '%WORKSPACE%'
+        echo 'WORKSPACE'
       }
     }
     stage('package') {

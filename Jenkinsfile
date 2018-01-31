@@ -4,12 +4,12 @@ pipeline {
     stage('build') {
       steps {
         echo 'start'
-        bat(script: 'gradle build', returnStatus: true, returnStdout: true)
       }
     }
     stage('ut') {
       steps {
         echo '%WORKSPACE%'
+        echo '${WORKSPACE}'
       }
     }
     stage('package') {

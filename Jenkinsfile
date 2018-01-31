@@ -38,7 +38,7 @@ pipeline {
     }
     stage('upload') {
       steps {
-        sleep 10
+        bat(script: 'curl -F \'file=@${WORKSPACE}/app/build/outputs/apk\' -F \'_api_key=44a037ad8e58e90ea0ee5285babb845b\' https://www.pgyer.com/apiv2/app/upload', returnStatus: true, returnStdout: true)
       }
     }
     stage('staging') {

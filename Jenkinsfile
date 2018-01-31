@@ -41,6 +41,11 @@ pipeline {
         sleep 10
       }
     }
+    stage('staging') {
+      steps {
+        sleep 10
+      }
+    }
     stage('release') {
       steps {
         sleep 10

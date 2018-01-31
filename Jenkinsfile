@@ -4,12 +4,12 @@ pipeline {
     stage('build') {
       steps {
         echo 'start'
+        bat 'gradle build'
       }
     }
     stage('ut') {
       steps {
-        echo '%WORKSPACE%'
-        echo '${WORKSPACE}'
+        echo 'test'
       }
     }
     stage('package') {
@@ -21,7 +21,7 @@ pipeline {
       parallel {
         stage('monkey') {
           steps {
-            sleep 10
+            sleep 1
           }
         }
         stage('perform') {
@@ -38,7 +38,7 @@ pipeline {
     }
     stage('upload') {
       steps {
-        bat(script: 'curl -F \'file=@${WORKSPACE}/app/build/outputs/apk\' -F \'_api_key=44a037ad8e58e90ea0ee5285babb845b\' https://www.pgyer.com/apiv2/app/upload', returnStatus: true, returnStdout: true)
+        bat(script: 'curl -F \'file=@./app/build/outputs/apk/app-debug.apk\' -F \'_api_key=44a037ad8e58e90ea0ee5285babb845b\' https://www.pgyer.com/apiv2/app/upload', returnStatus: true, returnStdout: true)
       }
     }
     stage('staging') {

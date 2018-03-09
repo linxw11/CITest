@@ -34,11 +34,6 @@ pipeline {
             sleep 10
           }
         }
-        stage('') {
-          steps {
-            sh '/usr/local/bin/ssh'
-          }
-        }
       }
     }
     stage('upload') {
